@@ -1,50 +1,108 @@
-# Welcome to your Expo app 👋
+# Self-Care App 🧘‍♀️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautiful React Native/Expo app for tracking habits, meditation, sleep, and personal wellness with AI assistance.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 📊 **Habit Tracking** - Create and track daily, weekly, or monthly habits
+- 🧘 **Meditation Timer** - Guided meditation sessions with customizable timers
+- 😴 **Sleep Logging** - Track your sleep patterns and quality
+- 📈 **Streak Analytics** - Visualize your progress and streaks
+- 🤖 **AI Assistant** - Get personalized wellness advice
+- 🎨 **Beautiful UI** - Modern, gradient-based design with smooth animations
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- **Framework**: React Native with Expo
+- **Navigation**: Expo Router (file-based routing)
+- **UI**: React Native Paper + Custom components
+- **Backend**: Appwrite (Database & Authentication)
+- **Charts**: React Native Chart Kit
+- **Styling**: Linear Gradients, Custom animations
 
-   ```bash
-   npx expo start
-   ```
+## Setup Instructions
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1. Install Dependencies
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Environment Variables Setup
 
-## Learn more
+This app uses Appwrite as the backend. You need to set up your environment variables:
 
-To learn more about developing your project with Expo, look at the following resources:
+1. **Copy the example environment file:**
+   ```bash
+   cp .env.example .env
+   ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. **Fill in your Appwrite credentials in `.env`:**
+   ```bash
+   EXPO_PUBLIC_APPWRITE_ENDPOINT=https://your-appwrite-endpoint.com/v1
+   EXPO_PUBLIC_APPWRITE_PROJECT_ID=your_project_id_here
+   EXPO_PUBLIC_APPWRITE_PLATFORM=your_platform_here
+   EXPO_PUBLIC_DB_ID=your_database_id_here
+   EXPO_PUBLIC_HABITS_COLLECTION_ID=your_habits_collection_id_here
+   EXPO_PUBLIC_COMPLETIONS_COLLECTION_ID=your_completions_collection_id_here
+   EXPO_PUBLIC_SLEEP_COLLECTION_ID=your_sleep_collection_id_here
+   EXPO_PUBLIC_MOOD_COLLECTION_ID=your_mood_collection_id_here
+   ```
 
-## Join the community
+3. **Get your Appwrite credentials:**
+   - Create an account at [Appwrite.io](https://appwrite.io)
+   - Create a new project
+   - Set up your database and collections
+   - Copy the project ID, endpoint, and collection IDs
 
-Join our community of developers creating universal apps.
+### 3. Start the App
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npx expo start
+```
+
+Then choose your platform:
+- **iOS Simulator**: Press `i`
+- **Android Emulator**: Press `a`
+- **Web Browser**: Press `w`
+- **Expo Go App**: Scan the QR code
+
+## Project Structure
+
+```
+app/
+├── (tabs)/           # Main tab screens
+│   ├── index.tsx     # Home dashboard
+│   ├── add-habit.tsx # Create new habits
+│   ├── meditation.tsx # Meditation sessions
+│   ├── streaks.tsx   # Progress analytics
+│   └── ...
+├── auth.tsx          # Authentication screen
+├── meditation-player.tsx # Meditation timer
+└── _layout.tsx       # Root layout
+lib/
+├── appwrite.ts       # Appwrite configuration
+└── auth-context.tsx  # Authentication context
+```
+
+## Security Notes
+
+- ✅ `.env` file is ignored by Git (your API keys are safe)
+- ✅ `.env.example` shows required variables without real values
+- ✅ All sensitive data is stored securely in Appwrite
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Set up your environment variables
+4. Make your changes
+5. Test thoroughly
+6. Submit a pull request
+
+## Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Paper](https://callstack.github.io/react-native-paper/)
+- [Appwrite Documentation](https://appwrite.io/docs)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
