@@ -28,7 +28,7 @@ I built calmiq to bring together a few self-care tools I kept using separately (
 
 calmiq uses [Appwrite](https://appwrite.io/) as its backend, handling user authentication and real-time data storage for habits, sleep logs, and meditation sessions. The app communicates with Appwrite through its REST APIs, parsing JSON responses and syncing data across screens so a user's progress stays consistent and up to date across the app.
 
-The front end is built entirely in React Native and TypeScript, with file-based routing through Expo Router to keep navigation organized as the app grew past a handful of screens. State is managed with React Hooks rather than an external state management library, since the app's data flows were simple enough not to need one, and I wanted to fully understand how state propagation worked rather than relying on a library to abstract it away.
+The front end is built entirely in React Native and TypeScript, with file-based routing through Expo Router to keep navigation organized as the app grew past a handful of screens. State is managed with React Hooks.
 
 ## Getting Started
 
